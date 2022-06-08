@@ -39,7 +39,7 @@ matrix = [[1, 1, 0],
 
 print(solution(matrix))
 
-
+# time complexity is m * n size of matrix 
 
 
 
