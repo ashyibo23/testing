@@ -4,11 +4,14 @@ number of 1 and 0 in the matrix
 
 '''
 
+import unittest
 def solution(mat):
     if not mat:
         return 0
 
     visited = set()
+
+
     count = 0
 
 
@@ -33,15 +36,38 @@ def solution(mat):
 
 
 
-matrix = [[1, 1, 0],
+matrix1 = [[1, 1, 0],
           [1, 1, 0],
           [0, 0, 1 ]]
 
-print(solution(matrix))
+matrix2 = [[0, 0, 0],
+          [0, 1, 0],
+          [0, 0, 0 ]]
+
+
+matrix3 = [[1, 0, 0],
+          [0, 0, 0],
+          [0, 0, 1 ]]
+
+# print(solution(matrix))
 
 # time complexity is m * n size of matrix 
 
 
+
+class TestGetNumberOfIslands(unittest.TestCase):
+    def runTest(self):
+        numOfIslands1 = solution(matrix1)
+        numOfIslands2 = solution(matrix2)
+        numOfIslands3 = solution(matrix3)
+        self.assertEqual(numOfIslands1, 2, "incorrect output")
+        self.assertEqual(numOfIslands2, 1, "incorrect output")
+        self.assertEqual(numOfIslands3, 2, "incorrect output")
+ 
+# run the test
+
+if __name__ == "__main__":
+    unittest.main()
 
 
 
